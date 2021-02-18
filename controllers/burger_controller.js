@@ -19,3 +19,23 @@ router.get("/", (req, res) => {
             res.json({ id: result.insertId});
         });
     });
+
+    router.put("api/burgers/:id", (req, res) => {
+        var cond = "id = " + req.params.id;
+        console.log("condition", cond);
+        
+        burger.update(
+            {
+                devoured: req.body.devoured
+            },
+            cond,
+            (result) => {
+                if (result.changedRows === 0) {
+                    return res.status(404 + "Update Failed").end();
+                }
+                res.status(200 + "Update Successful").end
+            }
+        );
+    });
+
+   module.exports = router; 
