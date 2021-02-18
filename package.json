@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/jinxdoll/burger#readme",
   "dependencies": {
+    "deamon": "^1.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "node": "^15.8.0"
   }
 }
