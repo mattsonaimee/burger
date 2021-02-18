@@ -9,8 +9,11 @@ database: 'burgers_db',
 });
 
 connection.connect((err) => {
-    if (err) throw err;
-    console.log( `Line 13 connection.js: connected as id ${connection.threadId}`);
+    if (err) { 
+        console.error(`Line 13 connection.js. error connecting: ${err.stack}`);
+        return;
+    }       
+    console.log( `Line 16 connection.js: connected as id ${connection.threadId}`);
 });
 
 module.exports = connection;
