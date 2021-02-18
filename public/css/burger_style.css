@@ -34,13 +34,13 @@ body {
     }
 }
 
-.enter_section {
+#new-burger {
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
 }
 
-#enter_text {
+#new-burger-text {
     width: 400px;
     height: 80px;
     padding-top: 10px;
