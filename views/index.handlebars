@@ -1,37 +1,55 @@
-<h1>Burgers!</h1>
 
-<h2>Burgers that I already tried:</h2>
 
-<ul>
-    {{#each burgers}}
-     {{#unless devoured}}
-     {{> burgers/burger-block devoured=true}}
-      {{/unless}}
-      {{/each}}
-</ul>
+<div class="container">
 
-<h1>The ones I want to DEVOUR!</h1>
+    <div class="row">
+        <div class="col-md-12 text-center" id="top-bar">
+            <img src="/assets/img/hamburger-cartoon.png" alt="burger-image" />
+            <h1> Devour the Burger App! </h1>
+        </div>
 
-<ul>
-    {{#each burgers}}
-     {{#unless devoured}}
-     {{> burgers/burger-block devoured=false}}
-      {{/unless}}
-      {{/each}}
-</ul>
 
-<h2>Add your favorite burger...</h2>
-<form class= "create-form">
-    <divclass = "form-group">
-        <label for="burger">Burger Name:</label> 
-        <input type="text" id="burger" name="name">    
+        <div class="col-md-6 text-center" class="task">
+
+            <div class="row">
+                {{#each burger}}
+                {{#unless this.devoured}}
+                <div class="col-md-9 text-center">
+                    <pre>{{this.id}}.{{this.burger_name}}</pre>
+                </div>
+                <div class="col-md-3 text-center">
+                    <form class="create-form">
+                        <input type="hidden" class="burger_id" type="text" value={{this.id}}>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Devour it!</button>
+                    </form>
+                </div>
+                {{/unless}}
+                {{/each}}
+            </div>
+        </div>
+
+
+        <div class="col-md-6 text-center" class="task">
+            {{#each burger_data}}
+            {{#if this.devoured}}
+            <input class="form-control" type="text" placeholder="{{this.id}}.{{this.burger_name}}" readonly>
+            {{/if}}
+            {{/each}}
+        </div>
     </div>
+</div>
 
-    <divclass = "form-group">
-        <label for="devoured"> Already eaten?</label>
-        <br>
-        <input type="radio" name="devoured" value="1" checked> Eaten!<br>    
-        <input type="radio" name="devoured" value="0" > Not Eaten!    
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center" id="new-burger">
+            <form action="/burgers/create" method="POST">
+                <input type="text" class="form-control" name="burger_name" value="" id="new-burger-text">
+                <button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
+            </form>
+            <p>Enter the name of a delicous burger you want to eat later and hit "Submit" to store it for later.</p>
+        </div>
     </div>
-     <button type="submit">Devour It!</button>
-</form>
+</div>
