@@ -19,5 +19,5 @@ app.use(routes);
 
 
 app.listen(PORT, () => {
-  console.log(`App listening on PORT: ${PORT}`);
+  console.log(`App listening on localhost: ${PORT}`);
 });
