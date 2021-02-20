@@ -1,8 +1,8 @@
 var orm = require("../config/orm.js");
 
 var burger = {
-    findAll: (cb) => {
-        orm.findAll("burgers", (res) => {
+    all: (cb) => {
+        orm.all("burgers", (res) => {
                 cb(res);
             });
     },
