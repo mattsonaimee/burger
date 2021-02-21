@@ -25,7 +25,7 @@ function objectToSql(ob) {
 
 var orm = {
   selectAll: function (tableInput, cb) {
-    var queryString = "SELCT * FROM" + tableInput + ";";
+    var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function (err, result) {
       if (err) {
         console.log("error line 31 orm.js");
