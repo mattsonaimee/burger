@@ -17,24 +17,25 @@ router.get("/", function(req, res) {
 	});
 });
 
-// Our POST request to add a burger to the database
+
 router.post("/burgers/insertOne", function(req, res) {
 	console.log(req.body.burger_name);
-	// if(req.body.burger_name !== "") {
-		burger.insertOne(["burger_name", 
-        "devoured"], [req.body.burger_name, false], function() {
-			res.redirect("/index");
-		});
+
+		burger.insertOne([
+            "burger_name", 
+        "devoured"], [req.body.burger_name], false, function(data) {
+			res.redirect("/");
+		}
+        );
 	
 });
 
 // Our PUT request to update a burger's status
-router.put('/burgers/updateOne/:id', function(req, res) {
-    var condition = 'id = ' + req.params.id;
-	console.log("condition is:", condtion);
+router.put("/:id", function(req, res) {
+	console.log(req.params.id);
 
-	burger.updateOne({devoured: req.body.devoured}, condition, function() {
-		res.redirect('/index');
+	burger.updateOne(req.params.id, function(data) {
+		res.redirect("/");
 	});
 })
 
