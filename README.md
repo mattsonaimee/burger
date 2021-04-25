@@ -50,7 +50,7 @@ Application enabled using the following sources:
 
 [Heroku](https://devour-burger-app-mattson.herokuapp.com/)
 
-![screencapture-devour-burger-app-mattson-herokuapp-2021-04-25-12_25_54](https://user-images.githubusercontent.com/73260853/116006775-927f0080-a5c1-11eb-9cc0-dfa4db4c1e85.png)
+![Screenshot 2021-04-25 123028](https://user-images.githubusercontent.com/73260853/116006917-1e912800-a5c2-11eb-9d86-6dd9ac6779db.png)
 
 ### Author
 
