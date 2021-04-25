@@ -6,7 +6,6 @@
 		</div>
 	</div>
 
-
 	<div class="row">
 		<div class="col-md-5">
 			<h3>Available Burgers</h3>
@@ -15,8 +14,7 @@
 				{{#unless this.devoured}}
 				<li>
 					<h5>{{this.id}}. {{this.burger_name}}
-						<form id="updateBurgerForm"> 
-				
+						<form id="updateBurgerForm">
 							<button id="updateBurgerButton" type='submit' class="btn btn-default">Devour it</button>
 						</form>
 					</h5>
@@ -24,7 +22,7 @@
 				{{/unless}}
 				{{/each}}
 			</ul>
-		</div><!-- end column 1 -->
+		</div>
 
 
 
@@ -68,8 +66,7 @@
 			</form>
 		</div>
 	</div>
-  <script src="/js/handleAddBurger.js">
-  <script src="/js/handleUpdateBurger.js">
-            
-        </script>
+	<script src="/js/handleAddBurger.js">
+		<script src="/js/handleUpdateBurger.js">
 
+	</script>
