@@ -28,7 +28,7 @@ var orm = {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function (err, result) {
       if (err) {
-        console.log("error line 31 orm.js");
+        // console.log("error line 31 orm.js");
         throw err;       
       }
      
