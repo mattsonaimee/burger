@@ -19,11 +19,11 @@ router.get("/", function(req, res) {
 
 
 router.post("/burgers/insertOne", function(req, res) {
-	console.log(req.body.burger_name);
+	console.log("line 22:" + req.body.burger_name);
 
 		burger.insertOne([
             "burger_name", 
-        "devoured"], [req.body.burger_name], false, function(data) {
+        "devoured"], [req.body.burger_name, false], function(data) {
 			res.redirect("/");
 		}
         );
